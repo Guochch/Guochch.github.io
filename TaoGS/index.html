@@ -560,12 +560,9 @@
     allowfullscreen></iframe>
 </div>
 <div class="section">
-    <!-- <h3 style="text-align: center; color: #7cb0d1;">Overview Video</h3> -->
-    <!-- <hr> -->
     <h6 style="color: #828688; text-align: center; font-size: 18px;">
         We present <strong
         style="font-weight: bold; color: #729ab6;">TaoGS</strong> , a novel topology-aware dynamic Gaussian representation that disentangles motion and appearance to support, both, long-range tracking and topological adaptation with up to 40x compression.
-                  <!-- The videos might take a few moments to load. -->
     </h6>
 
     <div class="row align-items-center">
@@ -573,13 +570,6 @@
             <img src="img/teaser_new.png" style="width:100%; margin-right:-10px; margin-top:5px;">
         </div>
     </div>
-
-    
-    
-
-    
-
-
 
     <div class="section">
         <h3 style="text-align: center; color: #7cb0d1;">Pipeline</h3>
@@ -597,33 +587,27 @@
 
         </div>
 
-        <h3 style="text-align: center; color: #7cb0d1;">Candidate Filtering and graph updating</h3>
+        <h3 style="text-align: center; color: #7cb0d1;">Dataset</h3>
 
         <hr>
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
-                <img src="img/candidate.jpg" style="width:100%; margin-right:-10px; margin-top:-10px;">
+                <img src="img/dataset.jpg" style="width:100%; margin-right:-10px; margin-top:-10px;">
             </div>
 
-            <h6 style="color: #828688;">
-Illustration of our Candidate Filtering and graph updating strategy. 
-        (1) We employ a spatio-temporal tracker to filter the candidate Gaussians.
-        (2) We further incorporate photometric error to identify poorly reconstructed regions in <span class="math-symbol">G<sub>cand</sub></span>.
-        (3) The remaining <span class="math-symbol">G<sub>cand</sub></span> are jointly optimized with <span class="math-symbol">G<sub>ref</sub></span>.
-        (4) During optimization, we periodically update the graph to preserve these connections.
-        <!-- <div class="note">The videos might take a few moments to load.</div> -->
+            <h6 style="color: #828688;">Overview of our dataset. The first two rows show representative static samples from our multi-view capture system.
+                 The bottom row displays consecutive frames from a dynamic sequence, illustrating the topological changes we address.
             </h6>
 
-        </div>
-            <h3 style="text-align: center; color: #7cb0d1;">Comparison</h3>
-            <hr>
-            <div class="row align-items-center">
-                <div class="col justify-content-center text-center">
-                    <img src="img/comparison_new.jpg" style="width:100%; margin-right:-10px; margin-top:20px;">
-                    <h6 style="color: #828688; margin-top: 10px;">
-                        Qualitative comparison with SOTA methods on novel view synthesis on HiFi4G dataset.
-                    </h6>
-                </div>
+    <div class="comparison">
+        <h3 style="text-align: center; color: #7cb0d1;">Comparison</h3>
+        <hr>
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <img src="img/comparison_new.jpg" style="width:100%; margin-right:-10px; margin-top:20px;">
+                <h6 style="color: #828688; margin-top: 10px;">
+                    Qualitative comparison with SOTA methods on novel view synthesis on HiFi4G dataset.
+                </h6>
             </div>
         </div>
 
@@ -793,17 +777,17 @@ Illustration of our Candidate Filtering and graph updating strategy.
                     lazyLoadVideos();
                 });
             </script>
-            </div>
+        </div>
 
-        
-        <div class="section">
-            <h3 style="text-align: center; color: #7cb0d1;">Result Gallery</h3>
-            <hr>
-            <div class="row align-items-center">
-                <div class="col justify-content-center text-center">
-                    <img src="img/gallery_new.jpg" style="width:100%; margin-right:-10px; margin-top:-10px;">
-                </div>
-            </div>
+
+    <div class="section">
+    <h3 style="text-align: center; color: #7cb0d1;">Result Gallery</h3>
+    <hr>
+    <div class="row align-items-center">
+        <div class="col justify-content-center text-center">
+            <img src="img/gallery_new.jpg" style="width:100%; margin-right:-10px; margin-top:-10px;">
+        </div>
+    </div>
 
 
         <div class="section">
