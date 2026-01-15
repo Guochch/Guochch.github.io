@@ -370,24 +370,88 @@
 
         <!-- [Remaining content remains unchanged] -->
     </div>
+    <div class="section motion-v2 wf-section" style="margin-top: 50px;">
+        <div class="container-2 w-container">
+            <h3 style="text-align: center; color: #7cb0d1;">Tracking Results</h3> <div id="videoCarouselMotion" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="p-2">
+                                <video width="100%" height="auto" autoplay muted controls loop preload="preload">
+                                    <source src="motion/hanfu9_motion.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="p-2">
+                                <video width="100%" height="auto" autoplay muted controls loop preload="none">
+                                    <source src="motion/magic_11_motion.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="p-2">
+                                <video width="100%" height="auto" autoplay muted controls loop preload="none">
+                                    <source src="motion/taotao3_motion.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <a class="carousel-control-prev" href="#videoCarouselMotion" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#videoCarouselMotion" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
         // 等待文档加载完成后运行
         $(document).ready(function () {
-            function adjustVideoSize() {
-                $('.carousel-item video').each(function () {
-                    $(this).css('width', '100%').css('height', 'auto');
+            // 处理所有轮播图的视频播放逻辑
+            $('.carousel').each(function() {
+                var $carousel = $(this);
+                
+                // 初始暂停所有视频
+                $carousel.find('video').each(function () {
+                    this.pause();
                 });
-            }
 
-            // 初次调整
-            adjustVideoSize();
+                // 播放当前活动页的视频
+                var activeVideo = $carousel.find('.carousel-item.active video')[0];
+                if (activeVideo) {
+                    activeVideo.play();
+                }
 
-            // 监听窗口大小调整
-            $(window).on('resize', adjustVideoSize);
-
-            // 监听轮播的 slid 事件
-            $('#videoCarousel').on('slid.bs.carousel', function () {
-                adjustVideoSize();
+                // 监听切换事件
+                $carousel.on('slide.bs.carousel', function (e) {
+                    // 暂停当前轮播图内的所有视频
+                    $(this).find('video').each(function () {
+                        this.pause();
+                    });
+                    // 播放即将显示的视频
+                    var nextVideo = $(e.relatedTarget).find('video')[0];
+                    if (nextVideo) {
+                        nextVideo.play();
+                    }
+                });
             });
         });
     </script>
